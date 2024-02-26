@@ -1,15 +1,29 @@
 {
   "name": "react-swipeable-btn",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A react component to create swipeable button in react",
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist && copyfiles -u 1 src/**/*.css dist"
   },
   "keywords": [
-    "swipeable"
+    "swipeable",
+    "react",
+    "swipe",
+    "button"
   ],
-  "author": "Abdur Rahman",
+  "author": {
+    "name": "Abdur Rahman",
+    "email": "abdur.rahman120@gmail.com",
+    "url": "https://github.com/abdurrahman720"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdurrahman720/react-swipeable-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdurrahman720/react-swipeable-button/issues"
+  },
   "license": "MIT",
   "peerDependencies": {
     "react": "^18.2.0",
