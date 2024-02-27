@@ -9,32 +9,34 @@
 ```bash
 npm install react-swipeable-button
 ```
+
 or
 
 ```bash
 yarn add react-swipeable-button
 ```
 
-<!-- ## [Demo](http://react-swipe-button.rinas.in/)
+## [Demo](http://react-swipe-button.rinas.in/)
 
-This is a [demo](http://react-swipe-button.rinas.in/) of react-swipe-button -->
+![](react-swipeable-button.gif)
 
 ## Usage
+
+You need to wrap a parent div to set the width, height and background color of the button. 
 
 ```jsx
 import { SwipeableButton } from "react-swipeable-button";
 
 function App() {
   const onSuccess = () => {
-   
     console.log("Successfully Swiped!");
   };
 
   return (
-    <div>
+    <div className="w-[500px] h-[100px] bg-white">
       <SwipeableButton
         onSuccess={onSuccess}
-        text="Swipe to learn More!"
+        text="Swipe to get to know us!"
         text_unlocked="Swiped!"
         color="#000"
       />
@@ -54,10 +56,16 @@ The text that will display on the swipe button
 The text that will display on the swipe button
 
 **color**
-The color of swipe button icon
+The color of swipe button 
 
 **onSuccess**
 The function that will get called when a swipe is success
+
+## Future Updates
+Contributing on this project is always welcome! Just fork, update, push to your respective branch and make a pull request after testing.
+
+`TypeScript support is coming soon.`
+
 
 ## License
 

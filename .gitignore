@@ -1,4 +1,5 @@
 node_modules
 .DS_Store
 dist
-react-swipeable-btn*.tgz
+react-swipeable-button*.tgz
+react-swipeable-button*.gif
