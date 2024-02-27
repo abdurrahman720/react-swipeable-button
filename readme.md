@@ -9,6 +9,11 @@
 ```bash
 npm install react-swipeable-button
 ```
+or
+
+```bash
+yarn add react-swipeable-button
+```
 
 <!-- ## [Demo](http://react-swipe-button.rinas.in/)
 
@@ -17,11 +22,11 @@ This is a [demo](http://react-swipe-button.rinas.in/) of react-swipe-button -->
 ## Usage
 
 ```jsx
-import { SwipeableButton } from "react-swipeable-btn";
+import { SwipeableButton } from "react-swipeable-button";
 
 function App() {
   const onSuccess = () => {
-    //you can create function to navigate somewhere or pop up sonething when the button is swiped
+   
     console.log("Successfully Swiped!");
   };
 
@@ -49,7 +54,7 @@ The text that will display on the swipe button
 The text that will display on the swipe button
 
 **color**
-The color of swipe button
+The color of swipe button icon
 
 **onSuccess**
 The function that will get called when a swipe is success
