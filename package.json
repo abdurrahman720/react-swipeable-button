@@ -1,16 +1,18 @@
 {
-  "name": "react-swipeable-btn",
-  "version": "1.0.2",
+  "name": "react-swipeable-button",
+  "version": "1.0.0",
   "description": "A react component to create swipeable button in react",
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist && copyfiles -u 1 src/**/*.css dist"
   },
   "keywords": [
+    "react swipeable button",
+    "react swipe button",
+    "swipe button",
+    "swipeable button",
     "swipeable",
-    "react",
-    "swipe",
-    "button"
+    "swipe"
   ],
   "author": {
     "name": "Abdur Rahman",
