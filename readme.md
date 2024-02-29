@@ -25,7 +25,7 @@ yarn add react-swipeable-button
 
 ## Demo
 
-![react-swipeable-button](https://raw.githubusercontent.com/abdurrahman720/react-swipeable-button/main/react-swipeable-button.gif)
+![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.0.7.gif?raw=true)
 
 ## Usage
 
