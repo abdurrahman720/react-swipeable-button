@@ -1,10 +1,17 @@
 {
   "name": "react-swipeable-button",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A react component to create swipeable button in react",
-  "main": "src/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "babel src -d dist && copyfiles -u 1 src/**/*.css dist"
+    "build": "babel src -d dist && copyfiles -u 1 src/**/*.css dist",
+    "build:ts": "rm -rf dist/  && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc && copyfiles -u 1 src/**/*.css dist/esm",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs && copyfiles -u 1 src/**/*.css dist/cjs"
   },
   "keywords": [
     "react swipeable button",
@@ -35,6 +42,9 @@
     "@babel/cli": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
-    "copyfiles": "^2.4.1"
+    "@types/react": "^18.2.60",
+    "@types/react-dom": "^18.2.19",
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.3.3"
   }
 }
