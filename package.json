@@ -1,7 +1,7 @@
 {
   "name": "react-swipeable-button",
-  "version": "1.0.8",
-  "description": "A react component to create swipeable button in react",
+  "version": "1.0.9",
+  "description": "A component to create swipeable button in react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
