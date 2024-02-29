@@ -8,7 +8,7 @@
 
 ### A npm pacakge for Swipeable button in react
 
- `Updatse:`
+ `Updates:`
 * Typescript Support Added
 
 ## Install
