@@ -1,15 +1,15 @@
 # react-swipeable-button
 
-
-
 [![NPM](https://img.shields.io/npm/v/react-swipeable-button.svg)](https://www.npmjs.com/package/react-swipeable-button)
-[![install size](https://packagephobia.com/badge?p=react-swipeable-button)](https://packagephobia.com/result?p=react-swipeable-button)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-swipeable-button?style=flat-square)](https://bundlephobia.com/package/react-swipeable-button@latest)[![npm downloads](https://img.shields.io/npm/dm/react-swipeable-button.svg?style=flat-square)](https://npm-stat.com/charts.html?package=react-swipeable-button)
+[![license](https://img.shields.io/github/license/abdurrahman720/react-swipeable-button.svg)](https://www.npmjs.com/package/react-swipeable-button)[![install size](https://packagephobia.com/badge?p=react-swipeable-button)](https://packagephobia.com/result?p=react-swipeable-button)[![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-swipeable-button?style=flat-square)](https://bundlephobia.com/package/react-swipeable-button@latest)[![npm downloads](https://img.shields.io/npm/dt/react-swipeable-button.svg)](https://www.npmjs.com/package/react-swipeable-button)
+
+<!-- [![npm downloads](https://img.shields.io/npm/dm/react-swipeable-button.svg?style=flat-square)](https://npm-stat.com/charts.html?package=react-swipeable-button) -->
 
 ### A npm pacakge for Swipeable button in react
 
- `Updates:`
-* Typescript Support Added
+`Updates:`
+
+- Typescript Support Added
 
 ## Install
 
@@ -41,12 +41,12 @@ function App() {
 
   return (
     <div className="w-[500px] h-[100px] bg-white">
-       <SwipeableButton
-                  onSuccess={onSuccess}
-                  text="Swipe me!"
-                  text_unlocked="yeee"
-                  color="#16362d"
-                />
+      <SwipeableButton
+        onSuccess={onSuccess}
+        text="Swipe me!"
+        text_unlocked="yeee"
+        color="#16362d"
+      />
     </div>
   );
 }
@@ -71,8 +71,6 @@ The function that will get called when a swipe is success
 ## Contribution
 
 Contributing on this project is always welcome! Just fork, update, push to your respective branch and make a pull request after testing. Make sure to open an issue before contribute.
-
-
 
 ## License
 

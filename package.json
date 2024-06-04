@@ -1,6 +1,6 @@
 {
   "name": "react-swipeable-button",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A component to create swipeable button in react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,9 +8,20 @@
     "dist"
   ],
   "scripts": {
+    "postpublish": "git push && git push --tags",
     "build": "rm -rf dist/  && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc && copyfiles -u 1 src/**/*.css dist/esm",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs && copyfiles -u 1 src/**/*.css dist/cjs"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): v${version}",
+      "push": true,
+      "commit": true,
+      "tag": true,
+      "requireCommits": false,
+      "requireCleanWorkingDir": false
+    }
   },
   "keywords": [
     "react swipeable button",
