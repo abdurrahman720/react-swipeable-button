@@ -40,6 +40,9 @@
     "type": "git",
     "url": "git+https://github.com/abdurrahman720/react-swipeable-button.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "bugs": {
     "url": "https://github.com/abdurrahman720/react-swipeable-button/issues"
   },
