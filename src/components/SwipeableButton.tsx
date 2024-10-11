@@ -2,11 +2,27 @@ import React, { Component, RefObject } from "react";
 import "./SwipeableButton.css";
 
 interface SwipeableButtonProps {
-  color?: string;
+  autoWidth?: boolean;
+  circle?: boolean;
+  disabled?: boolean;
+  noAnimate?: boolean;
+  width?: number;
+  height?: number;
+  position?: number;
   text?: string;
   text_unlocked?: string;
+  name?: string;
   onSuccess?: () => void;
   onFailure?: () => void;
+  sliderColor?: string;
+  sliderTextColor?: string;
+  sliderIconColor?: string;
+  background_color?: string;
+  borderRadius?: number;
+  /**
+   * @deprecated Deprecation Warning: The 'color' prop is deprecated and will be removed in future versions. Please use 'sliderColor' instead.
+   */
+  color?: string; // Deprecated
 }
 
 interface SwipeableButtonState {
@@ -51,7 +67,7 @@ export default class SwipeableButton extends Component<
   }
 
   onDrag = (e: MouseEvent | TouchEvent) => {
-    if (this.state.unlocked) {
+    if (this.state.unlocked || this.props.disabled) {
       return;
     }
 
@@ -125,26 +141,74 @@ export default class SwipeableButton extends Component<
   };
 
   render() {
+    const {
+      width = 400,
+      height = 60,
+      circle = false,
+      disabled = false,
+      noAnimate = false,
+      autoWidth = true,
+      name = "react-swipeable-button",
+      color,
+      sliderColor,
+      background_color = "#eee",
+      borderRadius = 30,
+      sliderTextColor = "#fff",
+      sliderIconColor = "#fff",
+    } = this.props;
+
+    const finalSliderColor = sliderColor || color || "#16362d";
+
+    // Log a warning if the deprecated color prop is used
+    if (color && !sliderColor) {
+      console.warn(
+        "Deprecation Warning: The 'color' prop is deprecated and will be removed in future versions. Please use 'sliderColor' instead."
+      );
+    }
     return (
-      <div className="ReactSwipeButton">
+      <div
+        key={name}
+        className={`ReactSwipeButton ${disabled ? "rsbContainerDisabled" : ""}`}
+        style={{
+          width: autoWidth ? "100%" : `${width}px`,
+          height: `${height}px`,
+        }}
+      >
         <div
           className={`rsbContainer ${
             this.state.unlocked ? "rsbContainerUnlocked" : ""
-          }`}
+          } ${noAnimate ? "noAnimate" : ""}`}
           ref={this.containerRef}
+          style={{
+            borderRadius: circle ? "50px" : "5px",
+            backgroundColor: background_color,
+          }}
         >
           <div
-            className="rsbcSlider"
+            className={`rsbcSlider ${noAnimate ? "noAnimate" : ""} `}
             ref={this.sliderRef}
             onMouseDown={this.startDrag}
-            style={{ background: this.props.color }}
+            style={{
+              background: finalSliderColor,
+              borderRadius: circle ? `${borderRadius}px` : "0px",
+            }}
             onTouchStart={this.startDrag}
           >
-            <span className="rsbcSliderText">{this.getText()}</span>
-            <span className="rsbcSliderArrow"></span>
+            <span className="rsbcSliderText" style={{ color: sliderTextColor }}>
+              {this.getText()}
+            </span>
+            <span
+              className="rsbcSliderArrow"
+              style={{
+                border: `2px solid ${sliderIconColor}`,
+                borderLeftColor: "transparent",
+                borderBottomColor: "transparent",
+                transformOrigin: "center",
+              }}
+            ></span>
             <span
               className="rsbcSliderCircle"
-              style={{ background: this.props.color }}
+              style={{ background: finalSliderColor }}
             ></span>
           </div>
           <div className="rsbcText">{this.getText()}</div>
