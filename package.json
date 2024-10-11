@@ -31,9 +31,6 @@
     "swipeable",
     "swipe"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "author": {
     "name": "Abdur Rahman",
     "email": "abdur.rahman120@outlook.com",
