@@ -2,3 +2,4 @@ src
 rollup.config.js
 react-swipeable-button*.tgz
 react-swipeable-button*.gif
+.npmrc

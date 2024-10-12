@@ -83,9 +83,9 @@ export default App;
 | background_color   | String              | "#eee"                   | The background color of the container                                                                         |
 | borderRadius       | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false) |
 | noAnimate          | Boolean             | false                    | Disable css transition                                                                                        |
-| width              | Number              | 400                      | Width of element (ignored if autoWidth is true)                                                               |
-| height             | Number              | 60                       | Height of element                                                                                             |
-| autoWidth          | Boolean             | true                     | takes 100% width of parent div                                                                                |
+| width              | Number              | 300                      | Width of element (ignored if autoWidth is true)                                                               |
+| height             | Number              | 50                       | Height of element                                                                                             |
+| autoWidth          | Boolean             | false                    | takes 100% width of parent div                                                                                |
 | circle             | Boolean             | true                     | All parts of component will be with border-radius and rounded handler                                         |
 | disabled           | Boolean             | false                    | Disable interaction with component                                                                            |
 | onSuccess          | Function (optional) | null                     | The function that will be called when a swipe is successful                                                   |

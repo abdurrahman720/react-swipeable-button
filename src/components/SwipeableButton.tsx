@@ -95,9 +95,9 @@ export default class SwipeableButton extends Component<
       this.isDragging = false;
       if (this.sliderLeft > this.containerWidth * 0.9) {
         this.sliderLeft = this.containerWidth;
+        this.onSwiped();
         if (this.props.onSuccess) {
           this.props.onSuccess();
-          this.onSuccess();
         }
       } else {
         this.sliderLeft = 0;
@@ -117,7 +117,7 @@ export default class SwipeableButton extends Component<
     this.startX = "touches" in e ? e.touches[0].clientX : e.clientX;
   };
 
-  onSuccess = () => {
+  onSwiped = () => {
     if (this.containerRef.current) {
       this.containerRef.current.style.width = `${this.containerRef.current.clientWidth}px`;
     }
@@ -142,12 +142,12 @@ export default class SwipeableButton extends Component<
 
   render() {
     const {
-      width = 400,
-      height = 60,
+      width = 300,
+      height = 50,
       circle = false,
       disabled = false,
       noAnimate = false,
-      autoWidth = true,
+      autoWidth = false,
       name = "react-swipeable-button",
       color,
       sliderColor,
