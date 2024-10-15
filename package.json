@@ -1,6 +1,6 @@
 {
   "name": "react-swipeable-button",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A component to create swipeable button in react",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -40,7 +40,6 @@
     "type": "git",
     "url": "git+https://github.com/abdurrahman720/react-swipeable-button.git"
   },
- 
   "bugs": {
     "url": "https://github.com/abdurrahman720/react-swipeable-button/issues"
   },

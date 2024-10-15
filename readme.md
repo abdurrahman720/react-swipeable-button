@@ -9,11 +9,14 @@
 
 **Changes:**
 
-- Deprecated the `color` prop in favor of `sliderColor`.
-- Resolved TypeScript compatibility issues. (`Error Failed to parse source map #1`)
-- Introduced new features (see the "Props" section for details) that makes the component fully customizable!
+**v1.2.0**
 
-## Install
+- Added `buttonReset` method to handle resetting the button's swipe state programmatically.
+- Added `buttonComplete` method to handle completing the button's swipe state programmatically.
+
+Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
+
+## Installs
 
 ```bash
 npm install react-swipeable-button
@@ -31,7 +34,7 @@ yarn add react-swipeable-button
 
 ## Usage
 
-You need to wrap a parent div to set the width, height and background color of the button.
+#### General Usage
 
 ```jsx
 import { SwipeableButton } from "react-swipeable-button";
@@ -46,22 +49,59 @@ function App() {
   };
 
   return (
-    <div className="w-[500px] h-[100px] bg-white">
+    <SwipeableButton
+      onSuccess={onSuccess}
+      onFailure={onFailure}
+      text="Swipe me!"
+      text_unlocked="yeee"
+      sliderColor="#16362d"
+      sliderTextColor="#fff"
+      sliderIconColor="#fff"
+      background_color="#eee"
+      borderRadius={30}
+      circle
+      autoWidth
+      disabled={false}
+      name="react-swipeable-button"
+    />
+  );
+}
+
+export default App;
+```
+
+#### With Ref : `buttonReset` and `buttonComplete` methods
+
+```tsx
+import { useRef } from "react";
+import { SwipeableButton } from "react-swipeable-button";
+
+function App() {
+
+  const swipeableButtonRef = useRef<SwipeableButton | null>(null); // Create a ref for the component
+
+  const handleReset = () => {
+    swipeableButtonRef.current?.buttonReset(); // Call the reset method
+  };
+
+  const handleComplete = () => {
+    swipeableButtonRef.current?.buttonComplete(); // Call the complete method
+  };
+  return (
       <SwipeableButton
-        onSuccess={onSuccess}
-        onFailure={onFailure}
         text="Swipe me!"
         text_unlocked="yeee"
-        sliderColor="#16362d"
+        color="16362d"
         sliderTextColor="#fff"
         sliderIconColor="#fff"
         background_color="#eee"
-        borderRadius={30}
         circle
-        autoWidth
-        disabled={false}
         name="react-swipeable-button"
+        ref={swipeableButtonRef} // Expose the ref to the component
       />
+      //example usage of the reset and complete methods
+      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleComplete}>Complete</button>
     </div>
   );
 }

@@ -29,6 +29,11 @@ interface SwipeableButtonState {
   unlocked: boolean;
 }
 
+export interface SwipeableButtonRef {
+  buttonReset: () => void;
+  buttonComplete: () => void;
+}
+
 export default class SwipeableButton extends Component<
   SwipeableButtonProps,
   SwipeableButtonState
@@ -66,7 +71,7 @@ export default class SwipeableButton extends Component<
     document.removeEventListener("touchend", this.stopDrag);
   }
 
-  onDrag = (e: MouseEvent | TouchEvent) => {
+  private onDrag = (e: MouseEvent | TouchEvent) => {
     if (this.state.unlocked || this.props.disabled) {
       return;
     }
@@ -82,23 +87,20 @@ export default class SwipeableButton extends Component<
     }
   };
 
-  updateSliderStyle = () => {
+  private updateSliderStyle = () => {
     if (this.state.unlocked) return;
     if (this.sliderRef.current) {
       this.sliderRef.current.style.left = `${this.sliderLeft + 50}px`;
     }
   };
 
-  stopDrag = () => {
+  private stopDrag = () => {
     if (this.state.unlocked) return;
     if (this.isDragging) {
       this.isDragging = false;
       if (this.sliderLeft > this.containerWidth * 0.9) {
         this.sliderLeft = this.containerWidth;
         this.onSwiped();
-        if (this.props.onSuccess) {
-          this.props.onSuccess();
-        }
       } else {
         this.sliderLeft = 0;
         if (this.props.onFailure) {
@@ -109,7 +111,7 @@ export default class SwipeableButton extends Component<
     }
   };
 
-  startDrag = (
+  private startDrag = (
     e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
   ) => {
     if (this.state.unlocked) return;
@@ -117,27 +119,41 @@ export default class SwipeableButton extends Component<
     this.startX = "touches" in e ? e.touches[0].clientX : e.clientX;
   };
 
-  onSwiped = () => {
+  private onSwiped = () => {
     if (this.containerRef.current) {
       this.containerRef.current.style.width = `${this.containerRef.current.clientWidth}px`;
     }
-    this.setState({
-      unlocked: true,
-    });
+    this.setState(
+      {
+        unlocked: true,
+      },
+      () => {
+        if (this.props.onSuccess) {
+          this.props.onSuccess();
+        }
+      }
+    );
   };
 
-  getText = () => {
+  private getText = () => {
     return this.state.unlocked
       ? this.props.text_unlocked || "UNLOCKED"
       : this.props.text || "SLIDE";
   };
 
-  reset = () => {
-    if (this.state.unlocked) return;
+  buttonReset = () => {
+    if (!this.state.unlocked) return;
     this.setState({ unlocked: false }, () => {
       this.sliderLeft = 0;
       this.updateSliderStyle();
     });
+  };
+
+  buttonComplete = () => {
+    if (this.state.unlocked) return;
+    this.sliderLeft = this.containerWidth;
+    this.updateSliderStyle();
+    this.onSwiped();
   };
 
   render() {
