@@ -11,8 +11,8 @@
 
 **v1.2.0**
 
-- Added `buttonReset` method to reset the component
-- Added `buttonComplete` method to complete the component
+- Added `buttonReset` method to handle resetting the button's swipe state programmatically.
+- Added `buttonComplete` method to handle completing the button's swipe state programmatically.
 
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
