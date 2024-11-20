@@ -131,7 +131,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
   font-size: 14px;
-  color: #000;
+  /* color: #000; */
 }
 
 .rsbContainerUnlocked .rsbcSliderArrow,

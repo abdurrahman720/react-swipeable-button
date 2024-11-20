@@ -9,6 +9,11 @@
 
 **Changes:**
 
+**v1.3.0**
+
+- Added `textColor` props to customize the button text color.
+
+
 **v1.2.0**
 
 - Added `buttonReset` method to handle resetting the button's swipe state programmatically.
@@ -118,7 +123,8 @@ export default App;
 | text_unlocked      | String              | "UNLOCKED!"              | The text that will displayed if swiping is successful                                                         |
 | color (Depricated) | String              | "#333"                   | Depricated, use sliderColor instead                                                                           |
 | sliderColor        | String              | "#16362d"                | The color of the slider                                                                                       |
-| sliderTextColor    | String              | "#fff"                   | The color of the text                                                                                         |
+| sliderTextColor    | String              | "#fff"                   | The color of the Slider Text                                                                                  |
+| TextColor          | String              | "#000"                   | The color of the Text (without slider)                                                                        |
 | sliderIconColor    | String              | "#fff"                   | The color of the icon                                                                                         |
 | background_color   | String              | "#eee"                   | The background color of the container                                                                         |
 | borderRadius       | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false) |

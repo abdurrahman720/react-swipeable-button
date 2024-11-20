@@ -16,6 +16,7 @@ interface SwipeableButtonProps {
   onFailure?: () => void;
   sliderColor?: string;
   sliderTextColor?: string;
+  textColor?: string;
   sliderIconColor?: string;
   background_color?: string;
   borderRadius?: number;
@@ -171,6 +172,7 @@ export default class SwipeableButton extends Component<
       borderRadius = 30,
       sliderTextColor = "#fff",
       sliderIconColor = "#fff",
+      textColor = "#000",
     } = this.props;
 
     const finalSliderColor = sliderColor || color || "#16362d";
@@ -227,7 +229,9 @@ export default class SwipeableButton extends Component<
               style={{ background: finalSliderColor }}
             ></span>
           </div>
-          <div className="rsbcText">{this.getText()}</div>
+          <div className="rsbcText" style={{ color: textColor }}>
+            {this.getText()}
+          </div>
         </div>
       </div>
     );
