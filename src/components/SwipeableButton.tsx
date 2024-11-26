@@ -24,6 +24,8 @@ interface SwipeableButtonProps {
    * @deprecated Deprecation Warning: The 'color' prop is deprecated and will be removed in future versions. Please use 'sliderColor' instead.
    */
   color?: string; // Deprecated
+  buttonChildren?: React.ReactNode;
+  buttonChildrenUnlocked?: React.ReactNode;
 }
 
 interface SwipeableButtonState {
@@ -138,8 +140,8 @@ export default class SwipeableButton extends Component<
 
   private getText = () => {
     return this.state.unlocked
-      ? this.props.text_unlocked || "UNLOCKED"
-      : this.props.text || "SLIDE";
+      ? this.props.text_unlocked || "UNLOCKED!"
+      : this.props.text || "SWIPE";
   };
 
   buttonReset = () => {
@@ -173,6 +175,8 @@ export default class SwipeableButton extends Component<
       sliderTextColor = "#fff",
       sliderIconColor = "#fff",
       textColor = "#000",
+      buttonChildren,
+      buttonChildrenUnlocked,
     } = this.props;
 
     const finalSliderColor = sliderColor || color || "#16362d";
@@ -212,9 +216,28 @@ export default class SwipeableButton extends Component<
             }}
             onTouchStart={this.startDrag}
           >
-            <span className="rsbcSliderText" style={{ color: sliderTextColor }}>
-              {this.getText()}
-            </span>
+            {buttonChildren ? (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100%",
+                }}
+              >
+                {this.state.unlocked && buttonChildrenUnlocked
+                  ? buttonChildrenUnlocked
+                  : buttonChildren}
+              </div>
+            ) : (
+              <span
+                className="rsbcSliderText"
+                style={{ color: sliderTextColor }}
+              >
+                {this.getText()}
+              </span>
+            )}
+
             <span
               className="rsbcSliderArrow"
               style={{
@@ -229,9 +252,25 @@ export default class SwipeableButton extends Component<
               style={{ background: finalSliderColor }}
             ></span>
           </div>
-          <div className="rsbcText" style={{ color: textColor }}>
-            {this.getText()}
-          </div>
+
+          {buttonChildren ? (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              {this.state.unlocked && buttonChildrenUnlocked
+                ? buttonChildrenUnlocked
+                : buttonChildren}
+            </div>
+          ) : (
+            <div className="rsbcText" style={{ color: textColor }}>
+              {this.getText()}
+            </div>
+          )}
         </div>
       </div>
     );
