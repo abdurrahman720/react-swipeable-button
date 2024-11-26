@@ -131,6 +131,10 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   /* color: #000; */
 }
 

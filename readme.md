@@ -5,19 +5,26 @@
 
 <!-- [![npm downloads](https://img.shields.io/npm/dm/react-swipeable-button.svg?style=flat-square)](https://npm-stat.com/charts.html?package=react-swipeable-button) -->
 
-### A npm pacakge for Swipeable button in react
+### A npm package for Swipeable button in react
 
 **Changes:**
+
+**v1.4.0**
+
+*New Features*
+
+- `buttonChildren` Prop: Users can now pass a custom ReactNode for the button's locked state. If provided, this will override the `text` prop.
+
+- `buttonChildrenUnlocked` Prop: Users can now pass a custom ReactNode for the button's unlocked state. If provided, this will override the `text_unlocked` prop. (`buttonChildren` is mandatory when `buttonChildrenUnlocked` is passed)
+
+*Bug Fixes*
+
+- Fixed an issue where long text was not displayed correctly in the button's UI..
 
 **v1.3.0**
 
 - Added `textColor` props to customize the button text color.
 
-
-**v1.2.0**
-
-- Added `buttonReset` method to handle resetting the button's swipe state programmatically.
-- Added `buttonComplete` method to handle completing the button's swipe state programmatically.
 
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
@@ -118,13 +125,15 @@ export default App;
 
 | Prop               | Type                | Default                  | Description                                                                                                   |
 | ------------------ | ------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| name               | String              | "react-swipeable-button" | Unique ID, in case of using several components on one page                                                    |
-| text               | String              | "SWIPE"                  | The text that will be displayed on the swipe button                                                           |
-| text_unlocked      | String              | "UNLOCKED!"              | The text that will displayed if swiping is successful                                                         |
+| name               | String              | "react-swipeable-button" | Unique ID, in case of using several components on one page 
+| buttonChildren               | ReactNode              | None                  | We can pass any react component as children to the button instead of text
+| buttonChildrenUnlocked               | ReactNode              | None                  | We can pass any react component as children to the button instead of text_unlocked when the button is unlocked (buttonChildren is mandatory when buttonChildrenUnlocked is passed)
+| text               | String              | "SWIPE"                  | The text that will be displayed on the swipe button  (will be overridden by buttonChildren)
+| text_unlocked      | String              | "UNLOCKED!"              | The text that will displayed if swiping is successful (will be overridden by buttonChildrenUnlocked)
 | color (Depricated) | String              | "#333"                   | Depricated, use sliderColor instead                                                                           |
 | sliderColor        | String              | "#16362d"                | The color of the slider                                                                                       |
 | sliderTextColor    | String              | "#fff"                   | The color of the Slider Text                                                                                  |
-| TextColor          | String              | "#000"                   | The color of the Text (without slider)                                                                        |
+| textColor          | String              | "#000"                   | The color of the Text (without slider)                                                                        |
 | sliderIconColor    | String              | "#fff"                   | The color of the icon                                                                                         |
 | background_color   | String              | "#eee"                   | The background color of the container                                                                         |
 | borderRadius       | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false) |
