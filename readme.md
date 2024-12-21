@@ -11,20 +11,19 @@
 
 **v1.4.0**
 
-*New Features*
+_New Features_
 
 - `buttonChildren` Prop: Users can now pass a custom ReactNode for the button's locked state. If provided, this will override the `text` prop.
 
 - `buttonChildrenUnlocked` Prop: Users can now pass a custom ReactNode for the button's unlocked state. If provided, this will override the `text_unlocked` prop. (`buttonChildren` is mandatory when `buttonChildrenUnlocked` is passed)
 
-*Bug Fixes*
+_Bug Fixes_
 
 - Fixed an issue where long text was not displayed correctly in the button's UI..
 
 **v1.3.0**
 
 - Added `textColor` props to customize the button text color.
-
 
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
@@ -82,6 +81,30 @@ function App() {
 export default App;
 ```
 
+#### Using ReactNode insead of text
+
+```tsx
+<SwipeableButton
+  onSuccess={onSuccess}
+  onFailure={onFailure}
+  buttonChildren={
+    <p style={{ color: "green", textAlign: "center" }}>Click me</p> // instead of text
+  }
+  buttonChildrenUnlocked={
+    <p style={{ color: "red", textAlign: "center" }}>Unlocked!</p> // using instead of text_unlocked
+  }
+  sliderColor="#16362d"
+  sliderTextColor="#fff"
+  sliderIconColor="#fff"
+  background_color="#eee"
+  borderRadius={30}
+  circle
+  autoWidth
+  disabled={false}
+  name="react-swipeable-button"
+/>
+```
+
 #### With Ref : `buttonReset` and `buttonComplete` methods
 
 ```tsx
@@ -123,28 +146,28 @@ export default App;
 
 ## Props
 
-| Prop               | Type                | Default                  | Description                                                                                                   |
-| ------------------ | ------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| name               | String              | "react-swipeable-button" | Unique ID, in case of using several components on one page 
-| buttonChildren               | ReactNode              | None                  | We can pass any react component as children to the button instead of text
-| buttonChildrenUnlocked               | ReactNode              | None                  | We can pass any react component as children to the button instead of text_unlocked when the button is unlocked (buttonChildren is mandatory when buttonChildrenUnlocked is passed)
-| text               | String              | "SWIPE"                  | The text that will be displayed on the swipe button  (will be overridden by buttonChildren)
-| text_unlocked      | String              | "UNLOCKED!"              | The text that will displayed if swiping is successful (will be overridden by buttonChildrenUnlocked)
-| color (Depricated) | String              | "#333"                   | Depricated, use sliderColor instead                                                                           |
-| sliderColor        | String              | "#16362d"                | The color of the slider                                                                                       |
-| sliderTextColor    | String              | "#fff"                   | The color of the Slider Text                                                                                  |
-| textColor          | String              | "#000"                   | The color of the Text (without slider)                                                                        |
-| sliderIconColor    | String              | "#fff"                   | The color of the icon                                                                                         |
-| background_color   | String              | "#eee"                   | The background color of the container                                                                         |
-| borderRadius       | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false) |
-| noAnimate          | Boolean             | false                    | Disable css transition                                                                                        |
-| width              | Number              | 300                      | Width of element (ignored if autoWidth is true)                                                               |
-| height             | Number              | 50                       | Height of element                                                                                             |
-| autoWidth          | Boolean             | false                    | takes 100% width of parent div                                                                                |
-| circle             | Boolean             | true                     | All parts of component will be with border-radius and rounded handler                                         |
-| disabled           | Boolean             | false                    | Disable interaction with component                                                                            |
-| onSuccess          | Function (optional) | null                     | The function that will be called when a swipe is successful                                                   |
-| onFailure          | Function (optional) | null                     | The function that will be called when a swipe is failed                                                       |
+| Prop                   | Type                | Default                  | Description                                                                                                                                                                        |
+| ---------------------- | ------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                   | String              | "react-swipeable-button" | Unique ID, in case of using several components on one page                                                                                                                         |
+| buttonChildren         | ReactNode           | None                     | We can pass any react component as children to the button instead of text                                                                                                          |
+| buttonChildrenUnlocked | ReactNode           | None                     | We can pass any react component as children to the button instead of text_unlocked when the button is unlocked (buttonChildren is mandatory when buttonChildrenUnlocked is passed) |
+| text                   | String              | "SWIPE"                  | The text that will be displayed on the swipe button (will be overridden by buttonChildren)                                                                                         |
+| text_unlocked          | String              | "UNLOCKED!"              | The text that will displayed if swiping is successful (will be overridden by buttonChildrenUnlocked)                                                                               |
+| color (Depricated)     | String              | "#333"                   | Depricated, use sliderColor instead                                                                                                                                                |
+| sliderColor            | String              | "#16362d"                | The color of the slider                                                                                                                                                            |
+| sliderTextColor        | String              | "#fff"                   | The color of the Slider Text                                                                                                                                                       |
+| textColor              | String              | "#000"                   | The color of the Text (without slider)                                                                                                                                             |
+| sliderIconColor        | String              | "#fff"                   | The color of the icon                                                                                                                                                              |
+| background_color       | String              | "#eee"                   | The background color of the container                                                                                                                                              |
+| borderRadius           | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false)                                                                      |
+| noAnimate              | Boolean             | false                    | Disable css transition                                                                                                                                                             |
+| width                  | Number              | 300                      | Width of element (ignored if autoWidth is true)                                                                                                                                    |
+| height                 | Number              | 50                       | Height of element                                                                                                                                                                  |
+| autoWidth              | Boolean             | false                    | takes 100% width of parent div                                                                                                                                                     |
+| circle                 | Boolean             | true                     | All parts of component will be with border-radius and rounded handler                                                                                                              |
+| disabled               | Boolean             | false                    | Disable interaction with component                                                                                                                                                 |
+| onSuccess              | Function (optional) | null                     | The function that will be called when a swipe is successful                                                                                                                        |
+| onFailure              | Function (optional) | null                     | The function that will be called when a swipe is failed                                                                                                                            |
 
 ## Contribution
 

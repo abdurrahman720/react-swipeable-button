@@ -231,7 +231,9 @@ export default class SwipeableButton extends Component<
               </div>
             ) : (
               <span
-                className="rsbcSliderText"
+                className={`rsbcSliderText ${
+                  noAnimate || this.state.unlocked ? "" : "textAnimate"
+                }`}
                 style={{ color: sliderTextColor }}
               >
                 {this.getText()}
@@ -267,7 +269,12 @@ export default class SwipeableButton extends Component<
                 : buttonChildren}
             </div>
           ) : (
-            <div className="rsbcText" style={{ color: textColor }}>
+            <div
+              className={`rsbcText ${
+                noAnimate || this.state.unlocked ? "" : "textAnimate"
+              }`}
+              style={{ color: textColor, width: "100%" }}
+            >
               {this.getText()}
             </div>
           )}
