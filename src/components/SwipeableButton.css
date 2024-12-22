@@ -88,7 +88,6 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
-
   font-size: 14px;
 }
 .rsbcSliderArrow {
@@ -151,3 +150,32 @@
       width: 120%;
     }
   } */
+
+.textAnimate {
+  position: relative;
+  transition: all 0.3s ease;
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s infinite linear;
+  user-select: none;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
