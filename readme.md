@@ -9,6 +9,23 @@
 
 **Changes:**
 
+**v1.5.0**
+
+_New Features_
+
+- `Shimmer Animation`: Introduced a shimmer effect for both the button and its text, providing a more engaging visual appearance.
+
+_Improvements_
+
+- `Long Text Visibility`: Enhanced the display logic for long text, ensuring better visibility and alignment in the button UI.
+
+- `Documentation Update`: Added troubleshooting tips and best practices to handle long text scenarios effectively.
+
+_Migration Notes_
+
+- The shimmer animation is applied by default. It can be disabled by passing `noAnimate` prop.
+- Existing button functionality remains unaffected, ensuring full backward compatibility.
+
 **v1.4.0**
 
 _New Features_
@@ -20,10 +37,6 @@ _New Features_
 _Bug Fixes_
 
 - Fixed an issue where long text was not displayed correctly in the button's UI..
-
-**v1.3.0**
-
-- Added `textColor` props to customize the button text color.
 
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
