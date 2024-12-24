@@ -275,7 +275,16 @@ export default class SwipeableButton extends Component<
               className={`rsbcText ${
                 noAnimate || this.state.unlocked ? "" : "textAnimate"
               }`}
-              style={{ color: textColor, width: "100%" }}
+              style={
+                {
+                  color: textColor,
+                  width: "100%",
+                  "--shimmer-color":
+                    textColor === "#fff" || textColor === "white"
+                      ? "rgba(128, 128, 128, 0.8)"
+                      : "rgba(255, 255, 255, 1)",
+                } as React.CSSProperties
+              }
             >
               {this.getText()}
             </div>

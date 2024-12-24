@@ -9,6 +9,12 @@
 
 **Changes:**
 
+**v1.5.1**
+
+_Fixes_
+
+- `Text Shimmer Visibility`: Enhanced the shimmer effect to handle scenarios where the `textColor` is **white** or **gray**, ensuring better visibility and contrast.
+
 **v1.5.0**
 
 _New Features_
