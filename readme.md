@@ -9,6 +9,12 @@
 
 **Changes:**
 
+**v1.5.2**
+
+_Fixes_
+
+- `Minor Text Visibility fix`: Enhanced the visibility of the text when the button is unlocked especially when the text is long.
+
 **v1.5.1**
 
 _Fixes_
