@@ -144,6 +144,20 @@ function App() {
 export default App;
 ```
 
+#### Troubleshooting
+
+- If you face trouble with long text, try to increase the width
+
+```tsx
+<SwipeableButton
+  text="A long text that doesn't fit in the middle" //long text
+  width={500} // increase the width (default is 300)
+  ...otherProps
+/>
+```
+
+- using `buttonChildren` and `buttonChildrenUnlocked` props can be an alternative too though it needs more work ; check props section for more details
+
 ## Props
 
 | Prop                   | Type                | Default                  | Description                                                                                                                                                                        |
