@@ -7,15 +7,13 @@
 
 ### A npm package for Swipeable button in react
 
-![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.0.7.gif?raw=true)
+<!-- ![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.0.7.gif?raw=true) -->
 
 ![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.6.1.gif?raw=true)
 
-
-
 **Changes:**
 
-**v1.6.0**
+**v1.6.2**
 
 _Improvements_
 
@@ -23,7 +21,7 @@ _Improvements_
 
 _Fixes_
 
-- Removed transition effect as it was causing slide delay 
+- Removed transition effect as it was causing slide delay
 - Disabled animation when the button is disabled
 
 **v1.5.2**
@@ -68,8 +66,6 @@ or
 ```bash
 yarn add react-swipeable-button
 ```
-
-
 
 ## Usage
 
