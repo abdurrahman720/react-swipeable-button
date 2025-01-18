@@ -199,17 +199,18 @@ export default class SwipeableButton extends Component<
         <div
           className={`rsbContainer ${
             this.state.unlocked ? "rsbContainerUnlocked" : ""
-          } ${noAnimate ? "noAnimate" : ""} `}
+          } `}
           ref={this.containerRef}
           style={{
             borderRadius: circle ? "50px" : "5px",
             backgroundColor: background_color,
           }}
         >
+          {!noAnimate && !disabled && !this.state.unlocked && (
+            <div className="sliderShimmer"></div>
+          )}
           <div
-            className={`rsbcSlider ${
-              noAnimate ? "" : "rsbcSliderTransition sliderShimmer"
-            } `}
+            className={`rsbcSlider`}
             ref={this.sliderRef}
             onMouseDown={this.startDrag}
             style={{
@@ -234,7 +235,9 @@ export default class SwipeableButton extends Component<
             ) : (
               <span
                 className={`rsbcSliderText ${
-                  noAnimate || this.state.unlocked ? "" : "textAnimate"
+                  noAnimate || this.state.unlocked || disabled
+                    ? ""
+                    : "textAnimate"
                 }`}
                 style={{ color: sliderTextColor }}
               >
@@ -273,7 +276,9 @@ export default class SwipeableButton extends Component<
           ) : (
             <div
               className={`rsbcText ${
-                noAnimate || this.state.unlocked ? "" : "textAnimate"
+                noAnimate || this.state.unlocked || disabled
+                  ? ""
+                  : "textAnimate"
               }`}
               style={
                 {

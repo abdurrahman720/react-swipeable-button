@@ -7,7 +7,24 @@
 
 ### A npm package for Swipeable button in react
 
+![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.0.7.gif?raw=true)
+
+![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.6.1.gif?raw=true)
+
+
+
 **Changes:**
+
+**v1.6.0**
+
+_Improvements_
+
+- `Shimmer Effect enhancement`: Enhanced the visibility of the shimmer effect
+
+_Fixes_
+
+- Removed transition effect as it was causing slide delay 
+- Disabled animation when the button is disabled
 
 **v1.5.2**
 
@@ -38,18 +55,6 @@ _Migration Notes_
 - The shimmer animation is applied by default. It can be disabled by passing `noAnimate` prop.
 - Existing button functionality remains unaffected, ensuring full backward compatibility.
 
-**v1.4.0**
-
-_New Features_
-
-- `buttonChildren` Prop: Users can now pass a custom ReactNode for the button's locked state. If provided, this will override the `text` prop.
-
-- `buttonChildrenUnlocked` Prop: Users can now pass a custom ReactNode for the button's unlocked state. If provided, this will override the `text_unlocked` prop. (`buttonChildren` is mandatory when `buttonChildrenUnlocked` is passed)
-
-_Bug Fixes_
-
-- Fixed an issue where long text was not displayed correctly in the button's UI..
-
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
 ## Installs
@@ -64,9 +69,7 @@ or
 yarn add react-swipeable-button
 ```
 
-## Demo
 
-![react-swipeable-button](https://github.com/abdurrahman720/react-swipeable-button/blob/main/react-swipeable-button-v1.0.7.gif?raw=true)
 
 ## Usage
 
@@ -88,16 +91,13 @@ function App() {
     <SwipeableButton
       onSuccess={onSuccess}
       onFailure={onFailure}
+      noAnimate={false} //default is false
       text="Swipe me!"
       text_unlocked="yeee"
-      sliderColor="#16362d"
-      sliderTextColor="#fff"
-      sliderIconColor="#fff"
-      background_color="#eee"
-      borderRadius={30}
-      circle
-      autoWidth
-      disabled={false}
+      sliderTextColor="#fff" //default is #fff
+      sliderIconColor="#fff" //default is #fff
+      background_color="#eee" //default is #eee
+      ...otherProps (check props section for more details)
       name="react-swipeable-button"
     />
   );
@@ -199,7 +199,7 @@ export default App;
 | sliderIconColor        | String              | "#fff"                   | The color of the icon                                                                                                                                                              |
 | background_color       | String              | "#eee"                   | The background color of the container                                                                                                                                              |
 | borderRadius           | Number              | 30                       | The border radius of the container lets you control the roundness of the corners (ignored if circle is false)                                                                      |
-| noAnimate              | Boolean             | false                    | Disable css transition                                                                                                                                                             |
+| noAnimate              | Boolean             | false                    | Disable animation                                                                                                                                                                  |
 | width                  | Number              | 300                      | Width of element (ignored if autoWidth is true)                                                                                                                                    |
 | height                 | Number              | 50                       | Height of element                                                                                                                                                                  |
 | autoWidth              | Boolean             | false                    | takes 100% width of parent div                                                                                                                                                     |

@@ -21,6 +21,7 @@
   /* background: #eee; */
   border-radius: 50px;
   position: relative;
+  z-index: 1;
   /* box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1); */
   overflow: hidden;
 }
@@ -37,7 +38,7 @@
   cursor: default;
 }
 .rsbContainerUnlocked .rsbcSlider {
-  left: 100% !important;
+  /* left: 100% !important; */
   cursor: default;
   pointer-events: none;
 }
@@ -55,21 +56,22 @@
   justify-content: center;
   float: left;
   width: 100%;
-  position: absolute;
+  position: relative;
   height: 100%;
   top: 0;
   left: 50px;
   margin-left: -100%;
   background: #333;
   /* border-radius: 25px; */
-  z-index: 20;
+  z-index: 50;
   /* box-shadow: 1px 1px 5px rgba(0,0,0,0.3); */
   cursor: pointer;
   /* transition: left 0.5s; */
+  /* overflow: hidden; */
 }
-.rsbcSliderTransition {
+/* .rsbcSliderTransition {
   transition: left 0.5s;
-}
+} */
 
 .rsbcSliderText {
   display: flex; /* Use flexbox */
@@ -100,7 +102,7 @@
   /* border-left-color: transparent;
   border-bottom-color: transparent; */
   transform-origin: center;
-  z-index: 10;
+  z-index: 60;
 }
 .rsbcSliderCircle {
   position: absolute;
@@ -110,6 +112,7 @@
   height: 100%;
   width: 50px;
   border-radius: 100%;
+  z-index: 50;
 }
 .rsbcText {
   display: flex; /* Use flexbox */
@@ -164,29 +167,37 @@
   -webkit-text-fill-color: transparent;
   animation: shimmer 2s infinite linear;
   user-select: none;
-  /* z-index: 10 !important; */
 }
 
-.rsbcSlider.sliderShimmer::after {
-  content: "";
+.sliderShimmer {
+  /* display: flex; 
+  align-items: center; 
+  justify-content: center; */
+  /* float: left; */
+  /* width: 100%; */
+  position: absolute;
+  height: 100%;
+  /* content: ""; */
   position: absolute;
   top: 0;
-  left: 100%;
-  width: 100%;
+  left: 10%;
+  width: 120%;
   height: 100%;
-
   background-size: 50% 100%;
-  z-index: 1;
+  z-index: 2;
   animation: sliderShimmer 4s infinite ease-in-out;
-  background-color: rgb(255 255 255 / 40%);
+  background-color: rgb(255 255 255 / 20%);
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  pointer-events: none;
 }
 
 @keyframes sliderShimmer {
   0% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateX(200%);
+    transform: translateX(-20%);
   }
 }
 
