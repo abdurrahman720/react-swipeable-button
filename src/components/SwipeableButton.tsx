@@ -58,7 +58,18 @@ export default class SwipeableButton extends Component<
 
   componentDidMount() {
     if (this.containerRef.current) {
-      this.containerWidth = this.containerRef.current.clientWidth - 50;
+      const containerWidth = () => {
+        if (this.containerRef.current) {
+          this.containerWidth = this.containerRef.current.clientWidth - 50;
+        }
+      };
+
+      containerWidth();
+
+      // NOTE: this setTimeout is sometimes necessary to run in Storybook
+      setTimeout(() => {
+        containerWidth();
+      }, 1000);
     }
 
     document.addEventListener("mousemove", this.onDrag);
@@ -163,7 +174,7 @@ export default class SwipeableButton extends Component<
     const {
       width = 300,
       height = 50,
-      circle = false,
+      circle = true,
       disabled = false,
       noAnimate = false,
       autoWidth = false,

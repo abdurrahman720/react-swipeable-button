@@ -13,6 +13,14 @@
 
 **Changes:**
 
+**1.6.3**
+_Fixes_
+- Slider Button vanishes in Storybook sometimes
+
+_Improvements_
+- `circle` prop is now *true* by default
+
+
 **v1.6.2**
 
 _Improvements_
@@ -24,34 +32,6 @@ _Fixes_
 - Removed transition effect as it was causing slide delay
 - Disabled animation when the button is disabled
 
-**v1.5.2**
-
-_Fixes_
-
-- `Minor Text Visibility fix`: Enhanced the visibility of the text when the button is unlocked especially when the text is long.
-
-**v1.5.1**
-
-_Fixes_
-
-- `Text Shimmer Visibility`: Enhanced the shimmer effect to handle scenarios where the `textColor` is **white** or **gray**, ensuring better visibility and contrast.
-
-**v1.5.0**
-
-_New Features_
-
-- `Shimmer Animation`: Introduced a shimmer effect for both the button and its text, providing a more engaging visual appearance.
-
-_Improvements_
-
-- `Long Text Visibility`: Enhanced the display logic for long text, ensuring better visibility and alignment in the button UI.
-
-- `Documentation Update`: Added troubleshooting tips and best practices to handle long text scenarios effectively.
-
-_Migration Notes_
-
-- The shimmer animation is applied by default. It can be disabled by passing `noAnimate` prop.
-- Existing button functionality remains unaffected, ensuring full backward compatibility.
 
 Check all the changes in the [Release Notes](https://github.com/abdurrahman720/react-swipeable-button/releases)
 
@@ -119,7 +99,7 @@ export default App;
   sliderIconColor="#fff"
   background_color="#eee"
   borderRadius={30}
-  circle
+  circle //default is true
   autoWidth
   disabled={false}
   name="react-swipeable-button"
