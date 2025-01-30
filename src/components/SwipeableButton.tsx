@@ -69,7 +69,7 @@ export default class SwipeableButton extends Component<
       // NOTE: this setTimeout is sometimes necessary to run in Storybook
       setTimeout(() => {
         containerWidth();
-      }, 1000);
+      }, 500);
     }
 
     document.addEventListener("mousemove", this.onDrag);
